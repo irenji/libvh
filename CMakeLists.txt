@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.16.0)
 
-project(libvh)
+project(libvh  VERSION 1.0.0 LANGUAGES CUDA CXX)
 
 add_library(${PROJECT_NAME} INTERFACE)
+
+find_package(CUDA REQUIRED)
 
 target_include_directories(${PROJECT_NAME}
     INTERFACE $<INSTALL_INTERFACE:include> $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
